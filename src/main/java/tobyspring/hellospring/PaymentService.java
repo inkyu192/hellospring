@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class PaymentService {
-    private final WebApiExRateProvider exRateProvider;
+    private final ExRateProvider exRateProvider;
 
     public PaymentService() {
         this.exRateProvider = new WebApiExRateProvider();
