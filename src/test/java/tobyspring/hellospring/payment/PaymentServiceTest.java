@@ -18,6 +18,9 @@ class PaymentServiceTest {
         Payment payment = paymentService.prepare(1L, "USD", BigDecimal.TEN);
 
         // 환율정보 가져온다
+        assertThat(payment.getExRate()).isNotNull();
+
+        // 원화환산금액 계산
         assertThat(payment.getConvertedAmount())
                 .isEqualTo(payment.getExRate().multiply(payment.getForeignCurrencyAmount()));
 
